@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ManTechTestModelStoreContainer" CdmEntityContainer="ManTechTestEntities">
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="ManTechTestModel.Complaint">
+        <MappingFragment StoreEntitySet="Complaints">
+          <ScalarProperty Name="ComplainId" ColumnName="ComplainId" />
+          <ScalarProperty Name="ComplainCategoryId" ColumnName="ComplainCategoryId" />
+          <ScalarProperty Name="ComplainTypeId" ColumnName="ComplainTypeId" />
+          <ScalarProperty Name="ComplainTitle" ColumnName="ComplainTitle" />
+          <ScalarProperty Name="ComplainDetail" ColumnName="ComplainDetail" />
+          <ScalarProperty Name="ComplainAttachment" ColumnName="ComplainAttachment" />
+          <ScalarProperty Name="ComplainDate" ColumnName="ComplainDate" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComplaintsCategories">
+      <EntityTypeMapping TypeName="ManTechTestModel.ComplaintsCategory">
+        <MappingFragment StoreEntitySet="ComplaintsCategories">
+          <ScalarProperty Name="ComplainCategoryId" ColumnName="ComplainCategoryId" />
+          <ScalarProperty Name="ComplainCategory" ColumnName="ComplainCategory" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComplaintsTypes">
+      <EntityTypeMapping TypeName="ManTechTestModel.ComplaintsType">
+        <MappingFragment StoreEntitySet="ComplaintsTypes">
+          <ScalarProperty Name="ComplainTypeId" ColumnName="ComplainTypeId" />
+          <ScalarProperty Name="ComplainType" ColumnName="ComplainType" />
+          <ScalarProperty Name="ComplainCategoryId" ColumnName="ComplainCategoryId" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="ManTechTestModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="ManTechTestModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="DeparmentId" ColumnName="DeparmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Priorities">
+      <EntityTypeMapping TypeName="ManTechTestModel.Priority">
+        <MappingFragment StoreEntitySet="Priorities">
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="Priority1" ColumnName="Priority" />
+          <ScalarProperty Name="PriorityLevel" ColumnName="PriorityLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="ManTechTestModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Role1" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statuses">
+      <EntityTypeMapping TypeName="ManTechTestModel.Status">
+        <MappingFragment StoreEntitySet="Statuses">
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="Status1" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="ManTechTestModel.Task">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="ComplainId" ColumnName="ComplainId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="AssignTo" ColumnName="AssignTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ManTechTestModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

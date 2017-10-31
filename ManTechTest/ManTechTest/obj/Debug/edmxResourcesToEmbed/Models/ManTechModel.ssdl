@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManTechTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Complaints">
+    <Key>
+      <PropertyRef Name="ComplainId" />
+    </Key>
+    <Property Name="ComplainId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComplainCategoryId" Type="int" />
+    <Property Name="ComplainTypeId" Type="int" />
+    <Property Name="ComplainTitle" Type="varchar" MaxLength="50" />
+    <Property Name="ComplainDetail" Type="varchar" MaxLength="250" />
+    <Property Name="ComplainAttachment" Type="varbinary(max)" />
+    <Property Name="ComplainDate" Type="datetime" />
+    <Property Name="EmployeeId" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="ComplaintsCategories">
+    <Key>
+      <PropertyRef Name="ComplainCategoryId" />
+    </Key>
+    <Property Name="ComplainCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComplainCategory" Type="varchar" MaxLength="50" />
+    <Property Name="PriorityId" Type="int" />
+  </EntityType>
+  <EntityType Name="ComplaintsTypes">
+    <Key>
+      <PropertyRef Name="ComplainTypeId" />
+    </Key>
+    <Property Name="ComplainTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComplainType" Type="varchar" MaxLength="250" />
+    <Property Name="ComplainCategoryId" Type="int" />
+    <Property Name="PriorityId" Type="int" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="DeparmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="Priorities">
+    <Key>
+      <PropertyRef Name="PriorityId" />
+    </Key>
+    <Property Name="PriorityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Priority" Type="varchar" MaxLength="50" />
+    <Property Name="PriorityLevel" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Statuses">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComplainId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="Comment" Type="varchar" MaxLength="250" />
+    <Property Name="AssignTo" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleId" Type="int" />
+  </EntityType>
+  <Association Name="FK_Complaints_ComplaintsCategories">
+    <End Role="ComplaintsCategories" Type="Self.ComplaintsCategories" Multiplicity="0..1" />
+    <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComplaintsCategories">
+        <PropertyRef Name="ComplainCategoryId" />
+      </Principal>
+      <Dependent Role="Complaints">
+        <PropertyRef Name="ComplainCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Complaints_ComplaintsTypes">
+    <End Role="ComplaintsTypes" Type="Self.ComplaintsTypes" Multiplicity="0..1" />
+    <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComplaintsTypes">
+        <PropertyRef Name="ComplainTypeId" />
+      </Principal>
+      <Dependent Role="Complaints">
+        <PropertyRef Name="ComplainTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Complaints_Departments">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="Complaints">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Complaints_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Complaints">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComplaintsTypes_ComplaintsCategories">
+    <End Role="ComplaintsCategories" Type="Self.ComplaintsCategories" Multiplicity="0..1" />
+    <End Role="ComplaintsTypes" Type="Self.ComplaintsTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComplaintsCategories">
+        <PropertyRef Name="ComplainCategoryId" />
+      </Principal>
+      <Dependent Role="ComplaintsTypes">
+        <PropertyRef Name="ComplainCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComplaintsTypes_Priorities">
+    <End Role="Priorities" Type="Self.Priorities" Multiplicity="0..1" />
+    <End Role="ComplaintsTypes" Type="Self.ComplaintsTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Priorities">
+        <PropertyRef Name="PriorityId" />
+      </Principal>
+      <Dependent Role="ComplaintsTypes">
+        <PropertyRef Name="PriorityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Departments">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="DeparmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employess_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Complaints">
+    <End Role="Complaints" Type="Self.Complaints" Multiplicity="1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Complaints">
+        <PropertyRef Name="ComplainId" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="ComplainId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="AssignTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Statuses">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="0..1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ManTechTestModelStoreContainer">
+    <EntitySet Name="Complaints" EntityType="Self.Complaints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComplaintsCategories" EntityType="Self.ComplaintsCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComplaintsTypes" EntityType="Self.ComplaintsTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Priorities" EntityType="Self.Priorities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Statuses" EntityType="Self.Statuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Complaints_ComplaintsCategories" Association="Self.FK_Complaints_ComplaintsCategories">
+      <End Role="ComplaintsCategories" EntitySet="ComplaintsCategories" />
+      <End Role="Complaints" EntitySet="Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Complaints_ComplaintsTypes" Association="Self.FK_Complaints_ComplaintsTypes">
+      <End Role="ComplaintsTypes" EntitySet="ComplaintsTypes" />
+      <End Role="Complaints" EntitySet="Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Complaints_Departments" Association="Self.FK_Complaints_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Complaints" EntitySet="Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Complaints_Employees" Association="Self.FK_Complaints_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Complaints" EntitySet="Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComplaintsTypes_ComplaintsCategories" Association="Self.FK_ComplaintsTypes_ComplaintsCategories">
+      <End Role="ComplaintsCategories" EntitySet="ComplaintsCategories" />
+      <End Role="ComplaintsTypes" EntitySet="ComplaintsTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComplaintsTypes_Priorities" Association="Self.FK_ComplaintsTypes_Priorities">
+      <End Role="Priorities" EntitySet="Priorities" />
+      <End Role="ComplaintsTypes" EntitySet="ComplaintsTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Departments" Association="Self.FK_Employees_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employess_Roles" Association="Self.FK_Employess_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Complaints" Association="Self.FK_Tasks_Complaints">
+      <End Role="Complaints" EntitySet="Complaints" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Employees" Association="Self.FK_Tasks_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Statuses" Association="Self.FK_Tasks_Statuses">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

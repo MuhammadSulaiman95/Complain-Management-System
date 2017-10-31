@@ -1,0 +1,82 @@
+﻿@model ManTechTest.Models.Complaint
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Complaint</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainDetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainAttachment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainAttachment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplaintsCategory.ComplainCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplaintsCategory.ComplainCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplaintsType.ComplainType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplaintsType.ComplainType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.DepartmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ComplainId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

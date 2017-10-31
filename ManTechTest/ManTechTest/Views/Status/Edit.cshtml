@@ -1,0 +1,40 @@
+﻿@model ManTechTest.Models.Status
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-close">
+            <div class="dropdown">
+                <button type="button" id="closeCard" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                <div aria-labelledby="closeCard" class="dropdown-menu has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+            </div>
+        </div>
+        <div class="card-header d-flex align-items-center">
+            <h3 class="h4">Status</h3>
+        </div>
+        <div class="card-body">
+            <p>Edit</p>
+            @using (Html.BeginForm("Edit","Status",FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.StatusId)
+
+                <div class="form-group row">
+                    <div class="col-sm-9">
+                        <input id="Status1" type="text" placeholder="Status" name="Status1" value="@Model.Status1" class="form-control form-control-success" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-9 offset-sm-3">
+                        <input type="submit" value="Save" class="btn btn-primary">
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

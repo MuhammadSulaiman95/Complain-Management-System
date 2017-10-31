@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta charset="utf-8" />
+    <!-- Bootstrap core CSS     -->
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="~/Content/material-dashboard.css" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="~/Content/demo.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/fonts/fontawesome-webfont.svg" rel="stylesheet">*@
+    <link href="~/Content/material-dashboard.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/fonts/fontawesome-webfont.svg" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <!-- Google fonts - Roboto -->
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="~/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="~/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="~/img/favicon.ico">
+    <!-- Font Awesome CDN-->
+    <!-- you can replace it by local Font Awesome-->
+    <script src="https://use.fontawesome.com/99347ac47f.js"></script>
+    <!-- Font Icons CSS-->
+    <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css">
+
+</head>
+<body>
+
+    <div class="page home-page">
+        <!-- Main Navbar-->
+        <header class="header">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-holder d-flex align-items-center justify-content-between">
+                        <!-- Navbar Header-->
+                        <div class="navbar-header">
+                            <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
+                                <div class="brand-text brand-big hidden-lg-down"><strong>ManTech</strong><span>Pvt. Ltd </span></div>
+                                <div class="brand-text brand-small"><strong>MT</strong></div>
+                            </a>
+                            <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                        </div>
+                        <!-- Navbar Menu -->
+                        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                            <!-- Search-->
+                            <!-- Notifications-->
+                            <li class="nav-item dropdown">
+                                <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red">12</span></a>
+                                <ul aria-labelledby="notifications" class="dropdown-menu">
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item">
+                                            <div class="notification">
+                                                <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
+                                                <div class="notification-time"><small>4 minutes ago</small></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item">
+                                            <div class="notification">
+                                                <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                                                <div class="notification-time"><small>4 minutes ago</small></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item">
+                                            <div class="notification">
+                                                <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
+                                                <div class="notification-time"><small>4 minutes ago</small></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item">
+                                            <div class="notification">
+                                                <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                                                <div class="notification-time"><small>10 minutes ago</small></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+                                </ul>
+                            </li>
+                            <!-- Messages                        -->
+                            <li class="nav-item dropdown">
+                                <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange">10</span></a>
+                                <ul aria-labelledby="notifications" class="dropdown-menu">
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages    </strong></a></li>
+                                </ul>
+                            </li>
+                            <!-- Logout    -->
+                            @*<li class="nav-item"><a href="login.html" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>*@
+                            <li>@Html.ActionLink("Signout", "Signout", "Signin")</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content d-flex align-items-stretch">
+            <!-- Side Navbar -->
+            <nav class="side-navbar">
+                <!-- Sidebar Header-->
+                <div class="sidebar-header d-flex align-items-center">
+                    <div class="avatar"><img src="~/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                    <div class="title">
+                        <h1 class="h4">@Session["empId"]</h1>
+                        <h1 class="h4">@Session["empName"]</h1>
+                        <p>@Session["designation"]</p>
+                    </div>
+                </div>
+                <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+                <ul class="list-unstyled">
+                    @*@*<li> <a href="./"><i class="icon-home"></i>Home</a></li>*@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                    <li>
+                        <a href="#departmentdd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Deparments </a>
+                        <ul id="departmentdd" class="collapse list-unstyled">
+                            <li>@Html.ActionLink("Create New", "Create", "Departments")</li>
+                            <li>@Html.ActionLink("Index", "Index", "Departments")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#emlpoyeesdd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Employess </a>
+                        <ul id="emlpoyeesdd" class="collapse list-unstyled">
+                            <li>@Html.ActionLink("Create New", "Create", "Employees")</li>
+                            <li>@Html.ActionLink("Index", "Index", "Employees")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#roles" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Roles </a>
+                        <ul id="roles" class="collapse list-unstyled">
+                            <li>@Html.ActionLink("Create New", "Create", "Roles")</li>
+                            <li>@Html.ActionLink("Index", "Index", "Roles")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#cmpcdd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Complaint Category </a>
+                        <ul id="cmpcdd" class="collapse list-unstyled">
+                            <li>@Html.ActionLink("Create New", "Create", "ComplaintsCategories")</li>
+                            <li>@Html.ActionLink("Index", "Index", "ComplaintsCategories")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#cmptdd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Complaint Types </a>
+                        <ul id="cmptdd" class="collapse list-unstyled">
+                            <li>@Html.ActionLink("Create New", "Create", "ComplaintsTypes")</li>
+                            <li>@Html.ActionLink("Index", "Index", "ComplaintsTypes")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#statusdd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Status </a>
+                        <ul id="statusdd" class="collapse list-unstyled">
+                            <li>@Html.ActionLink("Create New", "Create", "Status")</li>
+                            <li>@Html.ActionLink("Index", "Index", "Status")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#priodd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Priorities </a>
+                        <ul id="priodd" class="collapse list-unstyled">
+                            <li>@Html.ActionLink("Create New", "Create", "Priorities")</li>
+                            <li>@Html.ActionLink("Index", "Index", "Priorities")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#taskdd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Tasks </a>
+                        <ul id="taskdd" class="collapse list-unstyled">
+                            <li><a href="#">Closed</a></li>
+                            <li><a href="#">Pending</a></li>
+                            <li><a href="#">Open</a></li>
+                            <li><a href="#">Resend</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#reportdd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Reports </a>
+                        <ul id="reportdd" class="collapse list-unstyled">
+                            <li><a href="#">Summary</a></li>
+                            <li><a href="#">Detailed</a></li>
+                            <li><a href="#">Status Wise</a></li>
+                            <li><a href="#">Department Wise</a></li>
+                            <li><a href="#">Technician Wise</a></li>
+                            <li><a href="#">Complaint Category Wise</a></li>
+                        </ul>
+                    </li>
+                        }
+                        if (User.IsInRole("Other"))
+                        {
+                    <li>
+                        <a href="#cmpdd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Complaints </a>
+                        <ul id="cmpdd" class="collapse list-unstyled">
+                            <li>@Html.ActionLink("Create New", "Create", "Complaints")</li>
+                            <li>@Html.ActionLink("Index", "Index", "Complaints")</li>
+                        </ul>
+                    </li>
+                        }
+                        if (User.IsInRole("Technician"))
+                        {
+                            <li>
+                                <a href="#tasktcdd" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Tasks </a>
+                                <ul id="tasktcdd" class="collapse list-unstyled">
+                                    <li><a href="#">Closed</a></li>
+                                    <li><a href="#">Pending</a></li>
+                                    <li><a href="#">Open</a></li>
+                                    <li><a href="#">Resend</a></li>
+                                </ul>
+                            </li>
+                        }
+                    }
+                 </ul>
+            </nav>
+            <div class="content-inner">
+                <!-- Page Header-->
+
+                <div class="content">
+                    @RenderBody()
+
+                </div>
+                @*<footer class="main-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Your company &copy; 2017-2019</p>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <p>Design by <a href="https://bootstrapious.com/admin-templates" class="external">Bootstrapious</a></p>
+                                 Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)
+                            </div>
+                        </div>
+                    </div>
+                </footer>*@
+            </div>
+        </div>
+    </div>
+        @*<!--   Core JS Files   -->
+            <script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+            <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+            <script src="~/Scripts/material.min.js" type="text/javascript"></script>
+            <!--  Charts Plugin -->
+            <script src="~/Scripts//chartist.min.js"></script>
+            <!--  Dynamic Elements plugin -->
+            <script src="~/Scripts//arrive.min.js"></script>
+            <!--  PerfectScrollbar Library -->
+            <script src="~/Scripts//perfect-scrollbar.jquery.min.js"></script>
+            <!--  Notifications Plugin    -->
+            <script src="~/Scripts/bootstrap-notify.js"></script>
+            <!--  Google Maps Plugin    -->
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+            <!-- Material Dashboard javascript methods -->
+            <script src="~/Scripts/material-dashboard.js?v=1.2.0"></script>
+            <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+            <script src="~/Scripts/js/demo.js"></script>
+            <script type="text/javascript">
+            $(document).ready(function() {
+
+                // Javascript method's body can be found in assets/js/demos.js
+                demo.initDashboardPageCharts();
+
+            });
+            </script>*@
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="~/js/tether.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/jquery.cookie.js"> </script>
+        <script src="~/js/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="~/js/charts-home.js"></script>
+        <script src="~/js/front.js"></script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+        <!---->
+        <script>
+            (function (b, o, i, l, e, r) {
+                b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+                function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+                e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+                e.src = '//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e, r)
+            }(window, document, 'script', 'ga'));
+            ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+        </script>
+
+</body>
+</html>

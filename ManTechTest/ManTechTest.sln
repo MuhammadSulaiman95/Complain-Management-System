@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManTechTest", "ManTechTest\ManTechTest.csproj", "{5CE36049-EACE-4565-8AB3-4D172824635F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{CB4BEC9B-C4C3-4825-B47E-A2A4B67E072C}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureVMPublishModule.psm1 = PublishScripts\AzureVMPublishModule.psm1
+		PublishScripts\Publish-WebApplicationVM.ps1 = PublishScripts\Publish-WebApplicationVM.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{88C0B717-3312-4179-9A24-17371FB3191F}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\ManTechTest-VM-dev.json = PublishScripts\Configurations\ManTechTest-VM-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CE36049-EACE-4565-8AB3-4D172824635F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE36049-EACE-4565-8AB3-4D172824635F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CE36049-EACE-4565-8AB3-4D172824635F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE36049-EACE-4565-8AB3-4D172824635F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88C0B717-3312-4179-9A24-17371FB3191F} = {CB4BEC9B-C4C3-4825-B47E-A2A4B67E072C}
+	EndGlobalSection
+EndGlobal
